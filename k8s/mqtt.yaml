@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mqtt-sk-chen
+  name: mqtt-ooo
   labels:
     name: assignment
 spec:
@@ -10,12 +10,12 @@ spec:
   selector:
     matchLabels:
       component: mqtt
-      student: sk-chen
+      student: ooo
   template:
     metadata:
       labels:
         component: mqtt
-        student: sk-chen
+        student: ooo
     spec:
       containers:
         - name: mqtt

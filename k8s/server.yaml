@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: server-sk-chen
+  name: server-ooo
   labels:
     name: assignment
 spec:
@@ -10,12 +10,12 @@ spec:
   selector:
     matchLabels:
       component: server
-      student: sk-chen
+      student: ooo
   template:
     metadata:
       labels:
         component: server
-        student: sk-chen
+        student: ooo
     spec:
       containers:
         - name: server
