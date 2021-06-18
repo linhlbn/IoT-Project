@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: server-ooo
   labels:
-    name: assignment
+    name: test
 spec:
   type: ClusterIP
   selector:

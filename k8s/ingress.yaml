@@ -3,13 +3,14 @@ kind: Ingress
 metadata:
   name: iot-home-ooo
   labels:
-    name: assignment
+    name: test
   annotations:
     kubernetes.io/ingress.class: nginx
     # nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
-    - host: iot-home-ooo.{namespace_name}.{cluster_name}.en.internal
+    # - host: iot-home-ooo.{namespace_name}.{cluster_name}.en.internal
+    - host: iot-home-ooo.cxnam.ews.en.internal
       http:
         paths:
           - path: /

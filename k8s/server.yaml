@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: server-ooo
   labels:
-    name: assignment
+    name: test
 spec:
   replicas: 1
   revisionHistoryLimit: 0
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: ensaas/iot-home-server:2.1.0
+          image: bsdfuyih2gh/iot-home-server:3.1.0
           imagePullPolicy: Always
           ports:
             - containerPort: 3000
@@ -35,5 +35,5 @@ spec:
             - name: ENSAAS_SERVICES
               valueFrom:
                 secretKeyRef:
-                  name: assignment-secret
+                  name: datahub-cxnam-secret
                   key: ENSAAS_SERVICES

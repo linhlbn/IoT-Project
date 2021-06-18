@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: mqtt-ooo
   labels:
-    name: assignment
+    name: test
 spec:
   replicas: 1
   revisionHistoryLimit: 0
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: mqtt
-          image: ensaas/iot-home-mqtt:2.0.0
+          image: bsdfuyih2gh/iot-home-mqtt:3.0.0
           imagePullPolicy: Always
           resources:
             limits:
@@ -33,5 +33,5 @@ spec:
             - name: ENSAAS_SERVICES
               valueFrom:
                 secretKeyRef:
-                  name: assignment-secret
+                  name: datahub-cxnam-secret
                   key: ENSAAS_SERVICES

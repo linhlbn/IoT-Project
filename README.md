@@ -1,37 +1,7 @@
-# Iot-Project
-
-# 1. Before You Start
-
-## Understanding PostgreSQL *GROUP* on Local DB
-
-- Create a local **server** named *demo-db* **→** **hostname: localhost**
-- Create a new **group →** *groupTest*
-- Open **Query Tool** on *postgres* db
-- Paste the following query string into the query tool window and **run**
-
-```sql
-CREATE SCHEMA IF NOT EXISTS "testSchema";
-ALTER SCHEMA "testSchema" OWNER TO "groupTest";
-CREATE TABLE IF NOT EXISTS "testSchema"."testTable"(
-     id integer,
-     name character(50)
-);
-ALTER TABLE "testSchema"."testTable" OWNER to "groupTest";
-GRANT ALL ON ALL TABLES IN SCHEMA "testSchema" TO "groupTest";
-GRANT ALL ON ALL SEQUENCES IN SCHEMA "testSchema" TO "groupTest";
-```
-
-- Inspect *testSchema* and *testTable*
-- Inspect the **privilege types** of all **grantees** of *testTable* with the following query string
-
-```sql
-SELECT grantee, privilege_type
-FROM information_schema.role_table_grants
-WHERE table_name='testTable'
-```
+# Iot-Project-OOO
 
 # 2. Introduction
-Download the sample code to modify the config files and deploy "Iot-Project" app to assignment namespace 
+THe team know :)
 
 ## Modify the config files
 
@@ -61,3 +31,41 @@ Download the sample code to modify the config files and deploy "Iot-Project" app
     - Password
 5. Create a *Graph* panel and link it to the Postgresql data source as demonstrated in the training video.</br>
 **Note : Stop the *auto-refeshing* setting of your dashboard and fix the time range so that we can check the result within the range.**
+
+# 2. To-DO:
+- edit the js file for more data capture !
+- Use direct influxDB ?
+
+# 3. Note
+namespace_name : cxnam
+cluster_name : ews
+image: your image file
+
+# 4. Code to deploy
+1. start Docker  (win only ?)
+1.2 move to the right path
+2. minikube start (with PATH correct)
+3. cd ... to the build folder (have docker file)
+4. docker build -t bsdfuyih2gh/iot-home-mqtt:3.0.0 . // with the correct image name !!!
+4.1 cd ...
+4. docker build -t bsdfuyih2gh/iot-home-server:3.1.0 . // with the correct image name !!!
+
+5. docker push bsdfuyih2gh/iot-home-mqtt:3.0.0
+6. docker push bsdfuyih2gh/iot-home-server:3.1.0 
+
+8?. kubectl config set-context --current --namespace=cxnam
+9. kubectl config use-context 72d26fca-6c62-47ff-920e-4306bfbb07bc-ews-context
+
+10. kubectl apply -f k8s --namespace cxnam
+
+# 4. Code to check 
+- kubectl get ingress
+- kubectl get pods
+- remove ingress: kubectl delete ingress iot-home-ooo
+- remove pod: kubectl delete pods server-ooo-76bcdbbb77-fn6j5
+
+<!-- Mark the node as unschedulable by using the kubectl cordon command. This ensures that no new pods will get scheduled to the node while you are preparing it for removal or maintenance. -->
+
+- kubectl get deployments
+- kubectl delete deployment
+
