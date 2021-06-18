@@ -2,7 +2,7 @@ namespace: level2
 
 deployParams:
   server:
-    name: server-dave-lee
+    name: server-ooo
     replicaCount: 1
     labels:
       - labelKey: component
