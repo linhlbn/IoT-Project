@@ -59,9 +59,9 @@ svcClusterIps:
 
 global:
   database:
-    secretName: assignment-secret
+    secretName: ooo-secret
   url:
-    host: .assignment.eks004.en.internal
+    host: .cxnam.ews.en.internal
   ensaasApps:
     apiSso:
       internalUrl: http://api.sso.ensaas.en.internal/v4.0
